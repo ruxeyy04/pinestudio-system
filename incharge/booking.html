@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="https://kit.fontawesome.com/b15d9bd0c0.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <title>PINE STUDIOS</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="icon" type="image/x-icon" href="/icon.png">
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <h3 class="logo text-center signup" onclick="window.location='home.html';">
+      PINE<span class="text-dark font-weight-bold">STUDIOS</span>
+    </h3>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="home.html">Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="gallery.html">Gallery</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="services.html">Service</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="user.html">Users</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link font-weight-bold" href="booking.html">Booking<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <button class="btn dropdown">
+        <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-toggle="dropdown"
+          aria-expanded="false">
+          <i class="fa-solid fa-user text-dark"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="profile.html">Profile</a>
+
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logout">Logout</a>
+        </div>
+      </button>
+    </div>
+  </nav>
+  <div class="gallery">
+    <div class="header" data-aos="fade-left">
+      <h1>BOOKING LIST</h1>
+      <div class="line"></div>
+      <div class="d-flex justify-content-center">
+        <select class="form-control w-25" id="statusFilter">
+          <option value="">Show All</option>
+          <option value="Pending">Pending</option>
+          <option value="Accepted">Accepted</option>
+          <option value="Cancelled">Cancelled</option>
+          <option value="Rejected">Rejected</option>
+        </select>
+      </div>
+    </div>
+    <div class="us" style="margin-top: 15px">
+      <div style="overflow-x: auto">
+        <table id="example" class="table table-light"></table>
+      </div>
+      <!-- <button class="btn btn-primary" data-target="#add" data-toggle="modal">
+          Add
+        </button>
+        <button class="btn btn-warning" data-target="#edit" data-toggle="modal">
+          Change Status
+        </button>
+        <button
+          class="btn btn-danger"
+          data-target="#delete"
+          data-toggle="modal"
+        >
+          Delete
+        </button> -->
+    </div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center text-light font-weight-bold">
+          FOLLOW PINE STUDIOS ON SOCIAL MEDIA
+          <div class="row">
+            <div class="col-md-12 d-flex socs">
+              <button class="btn btn-lg">
+                <i class="fa-brands fa-youtube fa-xl text-danger"></i>
+              </button>
+              <button class="btn btn-lg">
+                <i class="fa-brands fa-square-facebook fa-xl text-primary"></i>
+              </button>
+
+              <button class="btn btn-lg">
+                <span class="ig">
+                  <i class="fa-brands fa-square-instagram fa-2xl"></i>
+                </span>
+              </button>
+            </div>
+            <div class="col-md-4">
+              <h5>E-MAIL</h5>
+              <div class="sub text-secondary text-left">
+                <h6>coronpalawa@gmail.com</h6>
+                <h6>municipalityofpalawan@gmail.com</h6>
+                <h6>tourismpalwan@gmail.com</h6>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h5>SPONSORS</h5>
+              <div class="sub text-secondary text-left">
+                <h6>Marinapalawan</h6>
+                <h6>Robinson’s Super Market Palawan</h6>
+                <h6>Mabuhay Pilipinas inc</h6>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h5>SPECIAL THANKS</h5>
+              <div class="sub text-secondary text-left">
+                <h6>Jefferson Canamo Photo & Films</h6>
+                <h6>Local EATS palawan</h6>
+                <h6>PITIK ni Jeff</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- logout-->
+  <div class="modal fade" id="logout" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h6>Are you sure you want to logout?</h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-danger" id="logoutBtn">
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add-->
+  <div class="modal fade" id="add" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form id="addBooking">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Booking Form</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h6>Client Information</h6>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="inputGroup">
+                  <input type="text" required="" autocomplete="off" />
+                  <label for="name">Firstname</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="inputGroup">
+                  <input type="text" required="" autocomplete="off" />
+                  <label for="name">Lastname</label>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-6">
+                    <label for="">Gender</label>
+                    <select class="custom-select" id="inputGroupSelect02">
+                      <option value="1">Male</option>
+                      <option value="2">Female</option>
+                      <option value="3">Prefer not to say</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="inputGroup">
+                      <input type="text" required="" autocomplete="off" />
+                      <label for="name">Age</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="inputGroup">
+                  <input type="text" required="" autocomplete="off" />
+                  <label for="name">Current Address</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="inputGroup">
+                  <input type="text" required="" autocomplete="off" />
+                  <label for="name">Permanent Address</label>
+                </div>
+              </div>
+            </div>
+            <h6>
+              Event Description
+              <span class="text-reset font-italic text-secondary" style="font-size: smaller">(Event type, Event date &
+                Event location)</span>
+            </h6>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="inputGroup">
+                  <input type="text" required="" autocomplete="off" />
+                  <label for="name">Event Type</label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="inputGroup">
+                  <input type="text" required="" autocomplete="off" />
+                  <label for="name">Event Location</label>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col">
+                    <label>Start Date:</label>
+                    <input type="datetime-local" class="form-control" name="start" id="start" required />
+                  </div>
+                  <div class="col">
+                    <label>End Date:</label>
+                    <input type="datetime-local" class="form-control" name="end" id="end" required />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 mt-2">
+              <label for="">Type of service</label>
+              <div class="row service_on_booking"></div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn svr-btn">BOOK NOW</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- ** UPDATE STATUS -->
+  <div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form id="statusUpdate">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" id="bookid" name="bookingid" value="" />
+            <label for="">Status</label>
+            <select class="custom-select" id="statusSelect" name="status">
+              <option value="Pending">Progress</option>
+              <option value="Accepted">Accept</option>
+              <option value="Rejected">Reject</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              Close
+            </button>
+            <button type="submit" class="btn btn-primary">Update</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- ** Delete-->
+  <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form id="deleteBooking">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h6>Are you sure you want to delete this data?</h6>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              Close
+            </button>
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="../js/common/cookie.js"></script>
+  <script src="/js/script.js"></script>
+  <script src="/js/incharge/main.js"></script>
+  <!-- DataTables JS -->
+  <script type="text/javascript" charset="utf8"
+    src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+  <!-- * DATATABLES  -->
+  <script>
+
+    let table;
+    getBookingList();
+
+    function getBookingList() {
+      table = $("#example").DataTable({
+        responsive: true,
+        ajax: {
+          url: url + "api/bookings/getAllBookings",
+          data: function (d) {
+            d.status = $('#statusFilter').val(); // Add status filter to the AJAX request
+          },
+          dataSrc: "data",
+          dataType: "json",
+        },
+        columns: [
+          {
+            data: "name",
+            title: "Service Name",
+          },
+          // { data: "servicename", title: "Service Name" },
+          { data: "bookingtype", title: "Booking Type" },
+          { data: "price", title: "Price" },
+
+          // { data: "address", title: "Address" },
+          {
+            data: null,
+            title: "Client",
+            render: function (data, type, row) {
+              return `${row.user_firstname} ${row.user_lastname}`;
+            },
+          },
+          { data: "address", title: "Address" },
+          { data: "user_email", title: "Client Email" },
+          {
+            data: null,
+            title: "Date",
+            render: function (data, type, row) {
+              // Extract the startdate and enddate from the row data
+              const startdate = row.startdate;
+              const enddate = row.enddate;
+
+              // Create styled HTML for the dates
+              const dateHtml =
+                '<div class="date-container">' +
+                '<span class="startdate">' +
+                startdate +
+                "</span>" +
+                " - " +
+                '<span class="enddate">' +
+                enddate +
+                "</span>" +
+                "</div>";
+
+              return dateHtml;
+            },
+          },
+          { data: "status", title: "Status" },
+          {
+            data: null,
+            title: "Action",
+            className: "dt-body-right",
+            render: function (data, type, row) {
+              return `
+                    <div class='d-flex flex-row'>
+                      <button class="btn btn-warning mr-2 edit_btn" 
+                      data-target="#edit" 
+                      data-toggle="modal"
+                      data-id='${row.id}' ${row.status == 'Rejected' || row.status == 'Cancelled' || row.status == 'Accepted' ? 'disabled' : ''}
+                      >
+                        Change Status
+                      </button>
+                      <button
+                        class="btn btn-danger trash_btn"
+                        data-target="#delete"
+                        data-toggle="modal"
+                        data-id='${row.id}'
+                      >
+                        Delete
+                      </button>
+                    </div>
+                    `;
+            },
+          },
+          {
+            data: null,
+            visible: false,
+            render: function (data) {
+              if (data.status === "Pending") return 1;
+              if (data.status === "Accepted") return 2;
+              if (data.status === "Cancelled") return 3;
+              return 4;
+            },
+          },
+        ],
+        order: [[9, "asc"]],
+      });
+
+      // $(".dataTables_filter").append(`
+      // <button class="btn btn-primary" data-target="#add" data-toggle="modal">
+      //   Add
+      // </button>
+      // `);
+    }
+    $('#statusFilter').change(function () {
+      table.ajax.reload();
+    });
+    //* Event handler for "Edit" button click
+    $("#example").on("click", ".edit_btn", function () {
+      // Get the gallery id from the data-id attribute
+      let bookid = $(this).data("id");
+      console.log(bookid);
+      let rowData = table.row($(this).closest("tr")).data();
+      console.log(rowData);
+
+      // Populate the select field with the row data status
+      $("#statusSelect").val(rowData.status);
+      $("#bookid").val(bookid);
+    });
+    // Handle form submissiom
+    $("#statusUpdate").on("submit", function (event) {
+      event.preventDefault();
+
+      const formData = new FormData(this);
+      $.ajax({
+        url: `${url}api/bookings/updateStatus`,
+        type: "PUT",
+        data: formData, // Send form data
+        processData: false, // Prevent jQuery from processing the data
+        contentType: false, // Prevent jQuery from setting contentType
+        success: function (response) {
+          if (response.success) {
+            Swal.fire({
+              icon: 'success',
+              title: 'Status Updated',
+            });
+            table.ajax.reload();
+            $('#edit').modal('hide')
+          }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          // Optionally show an error message
+          alert("Error: " + textStatus + " - " + errorThrown);
+        },
+        // complete: () => {
+        //   location.reload();
+        // },
+      });
+    });
+
+    let deleteuserid;
+    // Event handler for "Trash" button click
+    $("#example").on("click", ".trash_btn", function () {
+      // Get the booking id from the data-id attribute
+      deleteBookingId = $(this).data("id");
+      console.log(deleteBookingId);
+    });
+
+    // Handle form submission for booking deletion
+    $("#deleteBooking").on("submit", function (event) {
+      event.preventDefault();
+
+      $.ajax({
+        url: `${url}api/bookings/delete`,
+        type: "DELETE",
+        data: JSON.stringify({ bookingId: deleteBookingId }), // Send booking id for deletion
+        success: function (response) {
+          if (response.status === "success") {
+            // Refresh the DataTable to show the updated data
+            table.ajax.reload();
+            // Optionally show a success message
+            $('#delete').modal('hide')
+            Swal.fire({
+              icon: 'success',
+              title: 'Booking Deleted!',
+            });
+          } else {
+            // Optionally show an error message
+            alert("Failed to delete booking!");
+          }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          // Optionally show an error message
+          alert("Error: " + textStatus + " - " + errorThrown);
+        },
+      });
+    });
+  </script>
+</body>
+
+</html>

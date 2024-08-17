@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="https://kit.fontawesome.com/b15d9bd0c0.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css" />
+  <title>PINE STUDIOS</title>
+  <link rel="icon" type="image/x-icon" href="/icon.png">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <h3 class="logo text-center signup" onclick="window.location='home.html';">
+      PINE<span class="text-dark font-weight-bold">STUDIOS</span>
+    </h3>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="home.html">Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="gallery.html">Gallery</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link font-weight-bold" href="services.html">Service<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="user.html">Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="incharge.html">In-charge</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="booking.html">Booking</a>
+        </li>
+      </ul>
+      <button class="btn dropdown">
+        <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-toggle="dropdown"
+          aria-expanded="false">
+          <i class="fa-solid fa-user text-dark"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="profile.html">Profile</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logout">Logout</a>
+        </div>
+      </button>
+    </div>
+  </nav>
+  <div class="services">
+    <div class="header" data-aos="fade-left">
+      <h1>SERVICES</h1>
+      <div class="line"></div>
+    </div>
+
+    <div class="us" style="margin-top: 15px">
+      <!-- Data tables ni ari boi -->
+      <div style="overflow-x: auto">
+        <table id="example" class="table table-light"></table>
+      </div>
+      <!-- <button class="btn btn-primary" data-target="#add" data-toggle="modal">
+          Add
+        </button>
+        <button class="btn btn-warning" data-target="#edit" data-toggle="modal">
+          Edit
+        </button>
+        <button
+          class="btn btn-danger"
+          data-target="#delete"
+          data-toggle="modal"
+        >
+          Delete
+        </button> -->
+    </div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center text-light font-weight-bold">
+          FOLLOW PINE STUDIOS ON SOCIAL MEDIA
+          <div class="row">
+            <div class="col-md-12 d-flex socs">
+              <button class="btn btn-lg">
+                <i class="fa-brands fa-youtube fa-xl text-danger"></i>
+              </button>
+              <button class="btn btn-lg">
+                <i class="fa-brands fa-square-facebook fa-xl text-primary"></i>
+              </button>
+
+              <button class="btn btn-lg">
+                <span class="ig">
+                  <i class="fa-brands fa-square-instagram fa-2xl"></i>
+                </span>
+              </button>
+            </div>
+            <div class="col-md-4">
+              <h5>E-MAIL</h5>
+              <div class="sub text-secondary text-left">
+                <h6>coronpalawa@gmail.com</h6>
+                <h6>municipalityofpalawan@gmail.com</h6>
+                <h6>tourismpalwan@gmail.com</h6>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h5>SPONSORS</h5>
+              <div class="sub text-secondary text-left">
+                <h6>Marinapalawan</h6>
+                <h6>Robinson’s Super Market Palawan</h6>
+                <h6>Mabuhay Pilipinas inc</h6>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h5>SPECIAL THANKS</h5>
+              <div class="sub text-secondary text-left">
+                <h6>Jefferson Canamo Photo & Films</h6>
+                <h6>Local EATS palawan</h6>
+                <h6>PITIK ni Jeff</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- logout-->
+  <div class="modal fade" id="logout" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h6>Are you sure you want to logout?</h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-danger" id="logoutBtn">
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ** Add-->
+  <div class="modal fade" id="add" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form id="addServiceForm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add Service</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-us">
+              <div class="row">
+                <div class="col-md-12">
+                  <label for="serviceImage">Service Image</label>
+                  <input type="file" class="form-control" name="serviceImage" id="serviceImage" accept="image/*" />
+                </div>
+                <div class="col-md-6">
+                  <div class="inputGroup">
+                    <input type="text" required autocomplete="off" name="serviceName" id="serviceName" />
+                    <label for="serviceName">Service Name</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="inputGroup">
+                    <input type="text" required autocomplete="off" name="servicePrice" id="servicePrice" />
+                    <label for="servicePrice">Service Price</label>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <label for="">Service Type</label>
+                  <select class="custom-select" id="typeSelectionAdd">
+                    <option value="Photo">Photo</option>
+                    <option value="Video">Video</option>
+                    <option value="Photo & Video">Photo & Video</option>
+                    <option value="Highlights">Highlights</option>
+                  </select>
+                </div>
+                <div class="col-md-12">
+                  <label for="serviceDescription">Service Description</label>
+                  <textarea name="serviceDescription" class="form-control" id="serviceDescription"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              Close
+            </button>
+            <button type="submit" class="btn btn-primary">Add Service</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- ** Edit-->
+  <div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form id="editServices">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-us">
+              <div class="row">
+                <div class="col-md-12">
+                  <label for="">Service Image</label>
+                  <input type="file" class="form-control" name="image" id="editServiceImage" />
+                </div>
+                <div class="col-md-6">
+                  <div class="inputGroup">
+                    <input type="text" required="" autocomplete="off" name="name" id="editServiceName" />
+                    <label for="name">Service Name</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="inputGroup">
+                    <input type="text" required="" autocomplete="off" name="price" id="editServicePrice" />
+                    <label for="name">Service Price</label>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <label for="">Service Type</label>
+                  <select class="custom-select" id="typeSelection" name='type'>
+                    <option value="Photo">Photo</option>
+                    <option value="Video">Video</option>
+                    <option value="Photo & Video">Photo & Video</option>
+                    <option value="Highlights">Highlights</option>
+                  </select>
+                </div>
+                <div class="col-md-12">
+                  <label for="">Service Description</label>
+                  <textarea class="form-control" id="editServiceDescription" name="description"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              Close
+            </button>
+            <button type="submit" class="btn btn-primary">Update</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- ** Delete-->
+  <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form id="deleteServices">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h6>Are you sure you want to delete this data?</h6>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              Close
+            </button>
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <script src="../js/common/cookie.js"></script>
+  <script src="../js/common/jquery.js"></script>
+  <script src="/js/script.js"></script>
+  <script src="/js/admin/main.js"></script>
+  <!-- DataTables JS -->
+  <script type="text/javascript" charset="utf8"
+    src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+
+  <!-- * DATATABLES  -->
+  <script>
+    let table;
+    getServiceList();
+
+    function getServiceList() {
+      table = $("#example").DataTable({
+        responsive: true,
+        ajax: {
+          url: `${url}api/services/getAll`,
+          dataSrc: "data",
+        },
+        columns: [
+          {
+            data: null,
+            title: "Image",
+            render: function (data, type, row) {
+              return `<img src="${url}/img/services/${row.image ? row.image : "default.png"
+                }?_=${Math.floor(new Date().getTime() / 1000)}" alt="${row.name
+                }" width="50" height="75" style='object-fit: cover;'/>`;
+            },
+          },
+          { data: "name", title: "Name" },
+          // { data: "servicename", title: "Service Name" },
+          { data: "type", title: "Type" },
+          { data: "description", title: "Description" },
+          { data: "price", title: "Price" },
+          {
+            data: null,
+            title: "Action",
+            className: "dt-body-right",
+            render: function (data, type, row) {
+              return `
+                    <div class='d-flex flex-row'>
+                        <button class="btn btn-warning edit_btn mr-2" 
+                        data-target="#edit" 
+                        data-toggle="modal" 
+                        data-id="${row.id}"
+                        >
+                            Edit
+                        </button>
+                        <button class="btn btn-danger trash_btn" data-target="#delete" data-toggle="modal"
+                        data-id='${row.id}'
+                        >
+                            Delete
+                        </button> 
+                    </div>
+                    `;
+            },
+          },
+        ],
+      });
+
+      $(".dataTables_filter").append(`
+        <button class="btn btn-primary" data-target="#add" data-toggle="modal">
+          Add
+        </button>`);
+    }
+
+    //** Event handler for "Edit" button click
+    $("#example").on("click", ".edit_btn", function () {
+      // Get the gallery id from the data-id attribute
+      let services_id = $(this).data("id");
+      console.log(services_id);
+
+      let rowData = table.row($(this).closest("tr")).data();
+      console.log(rowData);
+      console.log(rowData.type)
+      // Populate the form fields with the row data
+      $(" #editServiceName").val(rowData.name);
+      $(" #editServicePrice").val(rowData.price);
+      $(" #editServiceDescription").val(rowData.description);
+      $('#typeSelection').val(rowData.type)
+
+      // Handle form submission
+      $("#editServices").on("submit", function (event) {
+        event.preventDefault();
+        const formData = new FormData();
+        const fileInput = $("#editServiceImage")[0];
+        if (fileInput.files.length > 0) {
+          formData.append("image", fileInput.files[0]);
+        }
+        formData.append("services_id", services_id);
+        formData.append("name", $("#editServiceName").val());
+        formData.append("price", $("#editServicePrice").val());
+        formData.append("description", $("#editServiceDescription").val());
+        formData.append("type", $('#typeSelection').val());
+        $.ajax({
+          url: `${url}api/services/update`,
+          type: "PUT",
+          data: formData,
+          contentType: false,
+          processData: false,
+          success: function (response) {
+            if (response.status === "success") {
+              // Refresh the DataTable to show the updated data
+              table.ajax.reload(); // not working lel
+
+              alert(response.message);
+            } else {
+              // Optionally show an error message
+              alert("Failed to update gallery details!");
+            }
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+            // Optionally show an error message
+            alert("Error: " + textStatus + " - " + errorThrown);
+          },
+          // complete: () => {
+          //   location.reload();
+          // },
+        });
+      });
+    });
+
+    //** Event handler for "Trash" button click
+    $("#example").on("click", ".trash_btn", function () {
+      // Get the appointment id from the data-id attribute
+      let services_id = $(this).data("id");
+      console.log(services_id);
+      // Handle form submission
+      $("#deleteServices").on("submit", function (event) {
+        event.preventDefault();
+
+        $.ajax({
+          url: `${url}api/services/delete`,
+          type: "DELETE",
+          data: JSON.stringify({ services_id }),
+          contentType: false,
+          processData: false,
+          success: function (response) {
+            if (response.status === "success") {
+              // Refresh the DataTable to show the updated data
+              table.ajax.reload();
+              // Optionally show a success message
+              alert("Services Deleted!");
+            } else {
+              // Optionally show an error message
+              alert("Failed to delete the gallery!");
+            }
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+            // Optionally show an error message
+            alert("Error: " + textStatus + " - " + errorThrown);
+          },
+          // complete: () => {
+          //   location.reload();
+          // },
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

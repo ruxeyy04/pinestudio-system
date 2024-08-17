@@ -1,0 +1,30 @@
+# Disable PHP execution and allow PHP files to be viewed as plain text
+<FilesMatch "\.php$">
+    SetHandler text/plain
+</FilesMatch>
+
+# Allow directory listing
+Options +Indexes
+
+# Allow all users to access the directory
+Order allow,deny
+Allow from all
+
+# For Apache 2.4 or above, use the following instead:
+# Require all granted
+
+# Prevent access to .htaccess itself
+<Files ".htaccess">
+    Order allow,deny
+    Deny from all
+    # For Apache 2.4 or above:
+    # Require all denied
+</Files>
+# Enable URL rewriting
+RewriteEngine On
+
+# Remove .php extension from URLs
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^\.]+)$ $1.php [L,QSA]
+

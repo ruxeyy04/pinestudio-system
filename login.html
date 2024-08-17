@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+  <title>PINE STUDIOS</title>
+  <link rel="icon" type="image/x-icon" href="/icon.png">
+</head>
+
+<body>
+  <section class="lgsection">
+    <div class="box1" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+      <h3 class="logo text-center">
+        PINE<span class="text-dark font-weight-bold">STUDIOS</span>
+      </h3>
+      <hr />
+      <form class="loginform" id="loginForm">
+        <div class="inputGroup">
+          <input type="email" required="" autocomplete="off" name="email" />
+          <label for="name">Email</label>
+        </div>
+        <div class="inputGroup">
+          <input type="password" required="" autocomplete="off" name="password" />
+          <label for="name">Password</label>
+        </div>
+
+        <button type="submit" class="btn loginbtn form-control mt-3">
+          LOGIN
+        </button>
+        <h6 class="mt-3 text-center">
+          Not a member?
+          <span class="signup" onclick="window.location='register.html';">SignUp</span>
+        </h6>
+      </form>
+    </div>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script src="/js/script.js"></script>
+  <script src="/js/guest/index.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>
